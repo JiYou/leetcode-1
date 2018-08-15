@@ -31,6 +31,17 @@ public class CCI_Arrays {
 
     }
 
+    public static int searchInsertPosition(int[] nums, int k) {
+        if (nums == null || nums.length == 0)
+            return 0;
+        for (int i = 0; i < nums.length; i++)
+            if (k <= nums[i])
+                return i;
+        return nums.length;
+    }
+
+
+
 
 
 
