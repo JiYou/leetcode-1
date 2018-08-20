@@ -1,6 +1,8 @@
 package com.leetcode.String;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class LeetcodeString {
@@ -70,6 +72,110 @@ public class LeetcodeString {
     private static boolean isValidChar(String s,int i) {
         char c = s.charAt(i);
         return (c >= '0' && c <= '9') ||(c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+    }
+
+    public static String simplifyPath(String path) {
+        if (path == null)
+            return null;
+        String[] list = path.split("/");
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < list.length; i++) {
+            String token = list[i];
+            if (list[i].equals(".") || list[i].length() == 0)
+                continue;
+            else if (!list[i].equals(".."))
+                stack.push(list[i]);
+            else {
+                if (!stack.isEmpty())
+                    stack.pop();
+            }
+        }
+        StringBuffer sb = new StringBuffer();
+        Stack<String> tmp = new Stack<>();
+        while (!stack.isEmpty())
+            tmp.push(stack.pop());
+        while (!tmp.isEmpty())
+            sb.append("/" + tmp.pop());
+        if (sb.length() == 0)
+            sb.append("/");
+        return sb.toString();
+    }
+
+    public String reverseWords(String s) {
+
+    }
+
+    private void reverseWord(char[] arr) {
+        int i = 0, j = 0, n = arr.length;
+        while (j < n) {
+            while (i < n && arr[i] == ' ')
+                i++;
+
+
+        }
+    }
+
+    private void reverse(char[] arr, int left, int right) {
+        while (left < right) {
+            char tmp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = tmp;
+            left++;
+            right--;
+        }
+    }
+
+    public int longestSubStringWithoutRepeatingCharacters(String s) {
+        if (s == null || s.length() == 0)
+            return 0;
+        HashSet<Character> set = new HashSet<>();
+        int max = -1;
+        int begin = 0, end = 0;
+        while(end < s.length()) {
+            if (set.contains(s.charAt(end))) {
+                max = (end - begin) < max ?  max:(end - begin);
+                while (s.charAt(begin) != s.charAt(end)) {
+                    set.remove(s.charAt(begin));
+                    begin++;
+                }
+                begin++;
+            } else {
+                set.add(s.charAt(end));
+            }
+            end++;
+        }
+        max = Math.max(max, end - begin);
+        return max;
+    }
+
+    public int longestSubStringWithAtMostTwoDistinctCharacters(String s) {
+        if (s == null || s.length() == 0)
+            return 0;
+        HashSet<Character> set = new HashSet<>();
+        int max = -1;
+        int begin = 0, end = 0;
+        int occur = 0;
+        while(end < s.length()) {
+            if (set.contains(s.charAt(end))) {
+                max = (end - begin) < max ?  max:(end - begin);
+                while (s.charAt(begin) != s.charAt(end)) {
+                    set.remove(s.charAt(begin));
+                    begin++;
+                }
+                begin++;
+            } else {
+                set.add(s.charAt(end));
+            }
+            end++;
+        }
+        max = Math.max(max, end - begin);
+        return max;
+    }
+
+    public String miniWindowSubString(String s, String t) {
+        if(s == null || t == null || s.length() < t.length())
+            return "";
+        
     }
 
 
