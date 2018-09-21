@@ -13,5 +13,7 @@ public class BinaryTreeRightSideView_Leetcode199 {
 
 	}
 
-	private void levelTravelsal()
+	private void levelTravelsal() {
+
+	}
 }
