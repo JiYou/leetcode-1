@@ -1,5 +1,7 @@
 package com.leetcode.tree;
 
+import common.TreeNode;
+
 public class BalancedBinaryTree_Leetcode110 {
 	public boolean isBalanced(TreeNode root) {
 		if (root == null)

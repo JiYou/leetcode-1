@@ -1,11 +1,17 @@
-package com.leetcode.tree;
+package common;
 
 public class TreeNode {
-	private int value;
-	private TreeNode left;
-	private TreeNode right;
+	public int value;
+	public TreeNode left;
+	public TreeNode right;
 
 	public TreeNode() {
+	}
+
+	public TreeNode(int val) {
+		this.value = val;
+		this.left = null;
+		this.right = null;
 	}
 
 	public int getValue() {

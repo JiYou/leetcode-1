@@ -1,5 +1,7 @@
 package com.leetcode.tree;
 
+import common.TreeNode;
+
 public class TrimBinarySearchTree_Leetcode669 {
 	public TreeNode trimBST(TreeNode root, int l, int r) {
 		if (root == null)

@@ -1,9 +1,8 @@
 package com.leetcode.backtracing;
 
-import com.leetcode.tree.TreeNode;
+import common.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LeetcodeBackTracing {
