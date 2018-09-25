@@ -2,6 +2,8 @@ package com.leetcode.list;
 
 
 
+import common.ListNode;
+
 import java.util.HashMap;
 import java.util.Stack;
 
