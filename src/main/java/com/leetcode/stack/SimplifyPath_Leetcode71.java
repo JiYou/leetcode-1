@@ -5,6 +5,6 @@ package com.leetcode.stack;
  */
 public class SimplifyPath_Leetcode71 {
 	public String simplifyPath(String path) {
-
+		return null;
 	}
 }
