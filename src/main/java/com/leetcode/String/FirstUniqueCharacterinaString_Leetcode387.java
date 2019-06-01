@@ -9,7 +9,7 @@ public class FirstUniqueCharacterinaString_Leetcode387 {
 		for(int i = 0; i < s.length(); i++)
 			count[s.charAt(i) - 'a']++;
 		for (int i = 0; i < s.length(); i++)
-			if (count[i] == 1)
+			if (count[s.charAt(i) - 'a'] == 1)
 				return i + 1;
 		return -1;
 	}
