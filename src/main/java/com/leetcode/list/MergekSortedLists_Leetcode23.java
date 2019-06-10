@@ -55,4 +55,36 @@ public class MergekSortedLists_Leetcode23 {
 		}
 		return dummy.next;
 	}
+
+	public ListNode mergeKLists2_test(ListNode[] lists) {
+		if (lists == null || lists.length == 0)
+			return null;
+		return sort_test(lists, 0, lists.length - 1);
+	}
+
+	private ListNode sort_test(ListNode[] lists, int lo, int hi) {
+		if (lo >= hi)
+			return lists[lo];
+		int mid = (hi - lo) / 2 + lo;
+		ListNode l1 = sort_test(lists, lo, mid);
+		ListNode l2 = sort_test(lists, mid + 1, hi);
+		return merge_test(l1, l2);
+	}
+
+	private ListNode merge_test(ListNode l1, ListNode l2) {
+		if (l1 == null)
+			return l2;
+		if (l2 == null)
+			return l1;
+		if (l1.val < l2.val) {
+			l1.next = merge_test(l1.next, l2);
+			return l1;
+		} else {
+			l2.next = merge_test(l1, l2.next);
+			return l2;
+		}
+	}
+
+
+
 }
