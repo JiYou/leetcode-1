@@ -3,6 +3,7 @@ package com.leetcode.arrays;
 import com.leetcode.utils.Interval;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MeetingRooms_Leetcode_252_253 {
 	public boolean canAttendMeeting(Interval[] intervals) {
@@ -15,6 +16,17 @@ public class MeetingRooms_Leetcode_252_253 {
 			if (interval.start < end)
 				return false;
 			end = Math.max(end, interval.end);
+		}
+		return true;
+	}
+
+	public boolean canAttendMeetings2(Interval[] intervals) {
+		if (intervals == null || intervals.length == 0)
+			return true;
+		Arrays.sort(intervals, (a, b) -> a.start - b.start);
+		for (int i = 1; i < intervals.length; i++) {
+			if (intervals[i - 1].start > intervals[i].end)
+				return false;
 		}
 		return true;
 	}

@@ -6,15 +6,16 @@ import common.TreeNode;
  * Created by lhcxx on 18/9/25.
  */
 public class SumRoottoLeafNumbers_Leetcode129 {
-	public int sumNumber(TreeNode root) {
-		return helper(root, 0);
+	public int sumNumbers(TreeNode root) {
+		helper(root, 0);
 	}
 
-	private int helper(TreeNode root, int num) {
-		if (root == null)
+	private int helper(TreeNode node, int num) {
+		if (node == null)
 			return 0;
-		if (root.left == null && root.right == null)
-			return num * 10 + root.value;
-		return helper(root.left, num * 10 + root.value) + helper(root.right, num * 10 + root.value);
+		if (node.left == null && node.right == null)
+			return 10 * num + node.value;
+		return helper(node.left, num * 10 + node.value) +
+			helper(node.right, num * 10 + node.value);
 	}
 }
