@@ -1,6 +1,6 @@
 package com.leetcode.backtracing;
 
-import common.TreeNode;
+import com.leetcode.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

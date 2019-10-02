@@ -1,4 +1,4 @@
-package common;
+package com.leetcode.common;
 
 public class TreeNode {
 	public int value;

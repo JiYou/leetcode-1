@@ -7,33 +7,24 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by lhcxx on 18/9/22.
- */
-public class BinaryTreeZigzagLevelOrderTraversal_Leetcode103 {
-	public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+public class BinaryTreeLevelOrderTraversal_102 {
+	public List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> res = new ArrayList<>();
 		if (root == null)
 			return res;
 		Queue<TreeNode> queue = new LinkedList<>();
-		boolean flag = true;
 		queue.offer(root);
 		while (!queue.isEmpty()) {
 			List<Integer> list = new ArrayList<>();
-			TreeNode node = queue.poll();
 			for (int i = 0; i < queue.size(); i++) {
-				if (flag)
-					list.add(node.getValue());
-				else
-					list.add(0, node.getValue());
-				if (node.getLeft() != null)
-					queue.offer(node.getLeft());
-				if (node.getRight() != null)
-					queue.offer(node.getRight());
+				TreeNode cur = queue.poll();
+				if (cur.left != null) queue.offer(cur.left);
+				if (cur.right != null) queue.offer(cur.right);
+				list.add(cur.value);
 			}
 			res.add(list);
-			flag = flag ? false:true;
 		}
 		return res;
 	}
+
 }

@@ -1,6 +1,6 @@
 package com.leetcode.tree;
 
-import common.TrieNode;
+import com.leetcode.common.TrieNode;
 
 public class AddandSearchWord_Leetcode211 {
 	private TrieNode root;

@@ -6,21 +6,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MergeIntervals_Leetcode56 {
+public class MergeIntervals_56 {
 	public List<Interval> merge(List<Interval> intervals) {
-		if (intervals == null || intervals.size() <= 1)
+		if (intervals == null || intervals.size() == 0)
 			return intervals;
-		Collections.sort(intervals, (x, y) -> (x.start - y.start));
-		List<Interval> res = new ArrayList<>();
+		Collections.sort(intervals, (a, b) -> (a.start - b.start));
 		int start = intervals.get(0).start;
 		int end = intervals.get(0).end;
-		for (Interval it: intervals) {
-			if (it.start <= end) {
-				end = Math.max(end, it.end);
+		List<Interval> res = new ArrayList<>();
+		for (Interval interval: intervals) {
+			if (end > interval.start) {
+				end = Math.max(end, interval.end);
 			} else {
 				res.add(new Interval(start, end));
-				start = it.start;
-				end = it.end;
+				start = interval.start;
+				end = interval.end;
 			}
 		}
 		res.add(new Interval(start, end));

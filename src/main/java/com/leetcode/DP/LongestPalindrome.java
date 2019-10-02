@@ -39,4 +39,6 @@ public class LongestPalindrome {
 		if (cur.length() > res.length())
 			res = cur;
 	}
+
+
 }

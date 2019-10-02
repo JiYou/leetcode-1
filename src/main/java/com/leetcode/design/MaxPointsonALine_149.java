@@ -1,6 +1,6 @@
 package com.leetcode.design;
 
-import common.Point;
+import com.leetcode.common.Point;
 
 import java.util.HashMap;
 

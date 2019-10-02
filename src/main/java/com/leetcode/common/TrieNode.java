@@ -1,4 +1,4 @@
-package common;
+package com.leetcode.common;
 
 public class TrieNode {
 	public TrieNode[] children;

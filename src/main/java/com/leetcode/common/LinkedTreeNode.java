@@ -1,4 +1,4 @@
-package common;
+package com.leetcode.common;
 
 /**
  * Created by lhcxx on 18/9/25.

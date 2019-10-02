@@ -1,6 +1,6 @@
 package com.leetcode.tree;
 
-import common.TreeNode;
+import com.leetcode.common.TreeNode;
 
 /**
  * Created by lhcxx on 18/9/25.

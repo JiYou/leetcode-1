@@ -1,6 +1,6 @@
 package com.leetcode.graph;
 
-import common.UndirectedGraphNode;
+import com.leetcode.common.UndirectedGraphNode;
 
 import java.util.*;
 

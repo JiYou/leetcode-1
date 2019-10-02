@@ -1,7 +1,6 @@
 package com.leetcode.tree;
 
-import common.Tree;
-import common.TrieNode;
+import com.leetcode.common.TrieNode;
 
 public class ImplementTrie_Leetcode208 {
 	TrieNode root;
@@ -14,8 +13,9 @@ public class ImplementTrie_Leetcode208 {
 		TrieNode node = root;
 		for (int i = 0; i < word.length(); i++) {
 			int j = word.charAt(i) - 'a';
-			if (node.children[j] == null)
+			if (node.children[j] == null) {
 				node.children[j] = new TrieNode();
+			}
 			node = node.children[j];
 		}
 		node.isWord = true;
@@ -34,7 +34,7 @@ public class ImplementTrie_Leetcode208 {
 
 	public boolean startWith(String prefix) {
 		TrieNode node = root;
-		for (int i = 0; i < prefix.length(); i++) {
+		for (int i = 0; i< prefix.length(); i++){
 			int j = prefix.charAt(i) - 'a';
 			if (node.children[j] == null)
 				return false;

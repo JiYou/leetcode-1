@@ -45,5 +45,23 @@ public class KthLargestElementInAnArray_LeetCode215 {
 		return p.poll();
 	}
 
+	private int partition2(int[] nums, int left, int right) {
+		int pivot = nums[left];
+		int l = left + 1;
+		int r = right;
+		while (l <= r) {
+			if (nums[l] >= pivot && nums[r] <= pivot)
+				swap(nums, l++, r--);
+			if (nums[l] <= pivot) l++;
+			if (nums[r] >= pivot) r--;
+		}
+		swap(nums, left, r);
+		return r;
+	}
 
+	private void swap(int[]a, int i, int j) {
+		int tmp = a[i];
+		a[i] = a[j];
+		a[j] = tmp;
+	}
 }

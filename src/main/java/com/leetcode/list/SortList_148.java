@@ -1,6 +1,6 @@
 package com.leetcode.list;
 
-import common.ListNode;
+import com.leetcode.common.ListNode;
 
 /**
  * Created by lhcxx on 18/9/26.
