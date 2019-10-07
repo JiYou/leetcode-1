@@ -30,4 +30,27 @@ public class JumpGame_55 {
 		}
 		return true;
 	}
+
+	public boolean canJump3(int[] nums) {
+		boolean[] res = new boolean[nums.length + 1];
+		res[0] = true;
+		for (int i = 1; i < nums.length; i++) {
+			res[i] = false;
+			for (int j = 0; j < i; j++)
+				if (res[j] && nums[j] + j >= nums[i]) {
+					res[j] = true;
+					break;
+				}
+		}
+		return res[nums.length - 1];
+	}
+
+	public boolean canJump4(int[] nums) {
+		int max = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (i > max) return false;
+			max = Math.max(nums[i] + i, max);
+		}
+		return true;
+	}
 }

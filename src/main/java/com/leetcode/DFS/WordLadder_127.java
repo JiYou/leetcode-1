@@ -30,6 +30,6 @@ public class WordLadder_127 {
 				}
 			}
 		}
+		return 0;
 	}
-
 }

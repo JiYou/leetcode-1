@@ -18,6 +18,7 @@ public class CloneGraph_133 {
 		if (map.containsKey(node))
 			return map.get(node);
 		UndirectedGraphNode dup = new UndirectedGraphNode(node.label);
+		map.put(node, dup);
 		for (UndirectedGraphNode n : node.neighbors) {
 			UndirectedGraphNode clone = helper(n);
 			dup.neighbors.add(clone);
@@ -59,5 +60,18 @@ public class CloneGraph_133 {
 			}
 		}
 		return new ArrayList<>(set);
+	}
+
+	private UndirectedGraphNode helper2(UndirectedGraphNode node) {
+		if (node == null) return null;
+		if (map.containsKey(node))
+			return map.get(node);
+		UndirectedGraphNode dup = new UndirectedGraphNode(node.label);
+		map.put(node, dup);
+		for (UndirectedGraphNode n : node.neighbors) {
+			UndirectedGraphNode clone = helper2(n);
+			dup.neighbors.add(clone);
+		}
+		return dup;
 	}
 }

@@ -24,4 +24,15 @@ public class LetterCombinationsOfPhoneNumber_leetcode17 {
 		for (int i = 0; i < letters.length(); i++)
 			helper(res, digits, s + digits.charAt(i), index + 1);
 	}
+
+	private void helper2(List<String> res, String digits, String s, int index) {
+		if (index == digits.length()) {
+			res.add(s);
+			return;
+		}
+		String letters = mapping[digits.charAt(index) - '0'];
+		for (int i = 0; i < letters.length(); i++) {
+			helper2(res, digits, s + letters.charAt(i), index + 1);
+		}
+	}
 }

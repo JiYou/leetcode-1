@@ -21,21 +21,4 @@ public class Subsets_Leetcode78 {
 			tmp.remove(tmp.size() - 1);
 		}
 	}
-
-	public List<List<Integer>> subsets_test(int[] nums) {
-		List<List<Integer>> res = new ArrayList<>();
-		helper_test(res, new ArrayList<>(), nums, 0);
-		return res;
-	}
-
-	private void helper_test(List<List<Integer>> res, List<Integer> list, int[] nums, int index) {
-		res.add(new ArrayList<>(list));
-		for (int i = index; i < nums.length; i++) {
-			list.add(nums[i]);
-			helper_test(res, list, nums, index + 1);
-			list.remove(list.size() - 1);
-		}
-	}
-
-
 }
