@@ -17,4 +17,20 @@ public class FindPeakElement_Leetcode162 {
 		if (nums[start] > nums[end]) return start;
 		return end;
 	}
+
+	public int findPeakElement2(int[] nums) {
+		int start = 0;
+		int end = nums.length - 1;
+
+		while (start < end) {
+			int mid = (end - start) / 2 + start;
+			if (nums[mid] >= nums[mid + 1])
+				end = mid;
+			else
+				start = mid + 1;
+		}
+		return end;
+	}
+
+
 }

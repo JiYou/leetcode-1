@@ -11,21 +11,24 @@ public class MaxAreaOfIsland_695 {
 		int res = 0;
 		for (int i = 0; i < m; i++)
 			for (int j = 0; j < n; j++) {
-				if (grid[i][j] == 1)
-					res = Math.max(res, dfs(grid, i, j));
+				if (grid[i][j] == 1) {
+					int cnt = 0;
+					dfs(grid, i , j, 0);
+				}
+
 			}
 		return res;
 	}
 
-	private int dfs(int[][] grid, int i, int j) {
-		if (i < 0 || i > m || j < 0 || j > n || grid[i][j] == 0)
+	private int dfs(int[][] grid, int i, int j, int cnt) {
+		if (i < 0 || i > m || j < 0 || j > n || grid[i][j] <= 0)
 			return 0;
-		grid[i][j] = 0;
+		grid[i][j] = -1;
 		int res = 1;
-		res += dfs(grid, i, j + 1);
-		res += dfs(grid, i, j - 1);
-		res += dfs(grid, i + 1, j);
-		res += dfs(grid, i - 1, j);
+		res += dfs(grid, i, j + 1, cnt);
+		res += dfs(grid, i, j - 1, cnt);
+		res += dfs(grid, i + 1, j, cnt);
+		res += dfs(grid, i - 1, j, cnt);
 		return res;
 	}
 }

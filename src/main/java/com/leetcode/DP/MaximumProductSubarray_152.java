@@ -25,6 +25,7 @@ public class MaximumProductSubarray_152 {
 			min = Math.min(Math.min(tmp * nums[i], min * nums[i]), nums[i]);
 			res = Math.max(res, max);
 		}
+
 		return res;
 	}
 }

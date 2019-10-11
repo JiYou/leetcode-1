@@ -14,7 +14,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters_Leetcode159 {
 		while (end < s.length()) {
 			if (map.size() <= 2)
 				map.put(s.charAt(end), end++);
-			else {
+			if (map.size() > 2) {
 				int leftMost = s.length();
 				for (int val : map.values())
 					start = Math.min(start, val);
