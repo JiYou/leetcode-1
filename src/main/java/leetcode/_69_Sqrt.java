@@ -17,4 +17,16 @@ public class _69_Sqrt {
 			return high;
 		else return low;
 	}
+
+	public int mySqrt2(int x) {
+		long l = 0, r = x;
+		while (l < r) {
+			long mid = (l + r + 1) / 2;
+			if (mid * mid <= x)
+				l = mid;
+			else
+				r = mid - 1;
+		}
+		return (int)l;
+	}
 }
