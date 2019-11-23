@@ -17,4 +17,5 @@ public class _236_LowestCommonAncestorofaBinaryTree {
 
 		return left == null ? right:left;
 	}
+
 }
