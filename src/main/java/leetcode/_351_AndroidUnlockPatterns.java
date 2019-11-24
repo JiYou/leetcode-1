@@ -23,7 +23,7 @@ public class _351_AndroidUnlockPatterns {
 	private int dfs(boolean[] used, int[][] skip, int cur, int remain) {
 		if (remain < 0) return  0;
 		if (remain == 0) return 1;
-		used[cur] = false;
+		used[cur] = true;
 		int res = 0;
 		for (int i = 1; i <= 9; i++) {
 			if (!used[i] && (skip[cur][i] == 0 || used[skip[cur][i]]))

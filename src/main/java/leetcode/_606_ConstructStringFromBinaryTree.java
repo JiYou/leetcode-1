@@ -6,7 +6,7 @@ public class _606_ConstructStringFromBinaryTree {
 	public String tree2Str(TreeNode root) {
 		StringBuffer sb = new StringBuffer();
 		helper(root, sb);
-		return sb.toString()
+		return sb.toString();
 	}
 
 	private void helper(TreeNode root, StringBuffer sb) {
