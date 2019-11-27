@@ -34,5 +34,35 @@ public class _333_LargestBSTSubtree {
 		}
 	}
 
+	int preVal = Integer.MIN_VALUE;
+
+	public int largestBSTSubTree(TreeNode root) {
+		if (root == null)
+			return 0;
+		if (isBST(root)) {
+			res = Math.max(res, getCount(root));
+		}
+		largestBSTSubtree(root.left);
+		largestBSTSubtree(root.right);
+		return res;
+	}
+
+	private int getCount(TreeNode root) {
+		if (root == null)
+			return 0;
+		return getCount(root.left) + getCount(root.right) + 1;
+	}
+
+	private boolean isBST(TreeNode root) {
+		if (root == null)
+			return true;
+		boolean left = isBST(root.left);
+		if (root.value <= preVal)
+			return false;
+		preVal = root.value;
+		boolean right = isBST(root.right);
+		return left && right;
+	}
+
 
 }
