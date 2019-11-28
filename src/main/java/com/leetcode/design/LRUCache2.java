@@ -1,7 +1,6 @@
 package com.leetcode.design;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class LRUCache2 {
     class Node {

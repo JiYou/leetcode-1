@@ -15,7 +15,7 @@ public class _36_ValidSudoku {
 			if (board[row][j] == board[i][j])
 				return false;
 		}
-		for (int col = 0; col < board.length; col++) {
+		for (int col = 0; col < board[0].length; col++) {
 			if (col == j) continue;
 			if (board[i][col] == board[i][j])
 				return false;

@@ -26,7 +26,7 @@ public class _40_CombinationSumII {
 			if (i != start && candidates[i] == candidates[i - 1])
 				continue;
 			list.add(candidates[i]);
-			helper(res, list, candidates, target - candidates[i], start + 1);
+			helper(res, list, candidates, target - candidates[i], i + 1);
 			list.remove(list.size() - 1);
 		}
 	}
