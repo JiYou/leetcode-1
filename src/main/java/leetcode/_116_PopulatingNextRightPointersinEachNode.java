@@ -1,7 +1,6 @@
 package leetcode;
 
 import com.leetcode.common.LinkedTreeNode;
-import com.leetcode.common.TreeNode;
 
 public class _116_PopulatingNextRightPointersinEachNode {
 	public void connect(LinkedTreeNode root) {

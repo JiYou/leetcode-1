@@ -15,7 +15,7 @@ public class _79_WordSearch {
 			return true;
 		if (i < 0 || i > board.length || j < 0 || j > board[0].length)
 			return false;
-		if (board[i][j] == toString().charAt(start++)) {
+		if (board[i][j] == word.charAt(start++)) {
 			char c = board[i][j];
 			board[i][j] = '#';
 			boolean res =  dfs(board, i + 1, j, word, start) ||

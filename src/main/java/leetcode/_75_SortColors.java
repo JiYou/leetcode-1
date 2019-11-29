@@ -6,7 +6,7 @@ public class _75_SortColors {
 			return;
 		int l = 0, r = nums.length - 1;
 		int index = 0;
-		while (l <= r) {
+		while (index <= r) {
 			if (nums[index] == 0)
 				swap(nums, l++, index++);
 			else if (nums[index] == 1)

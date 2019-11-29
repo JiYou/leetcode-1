@@ -19,7 +19,7 @@ public class _76_MinimumWindowSubstring {
 		for (int r = 0; r < s.length(); r++) {
 			hash[sArr[r]]--;
 
-			if (sArr[r] >= 0)
+			if (hash[sArr[r]] >= 0)
 				count--;
 
 			while (l < r && hash[sArr[l]] < 0)

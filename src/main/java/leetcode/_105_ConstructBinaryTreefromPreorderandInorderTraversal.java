@@ -22,4 +22,20 @@ public class _105_ConstructBinaryTreefromPreorderandInorderTraversal {
 		root.right = helper(preStart + index - inStart + 1, index + 1, inEnd, preorder, inorder);
 		return root;
 	}
+
+	private TreeNode buildTree(int[] preorder, int preLeft, int preRight, int[] inorder, int inLeft, int inRight) {
+		if (preLeft > preRight || inLeft > inRight)
+			return null;
+
+		TreeNode root = new TreeNode(preorder[preLeft]);
+		int index = inLeft;
+		while (inorder[index] != root.value)
+			index++;
+
+		root.left = buildTree(preorder, preLeft + 1,
+			preLeft + index - inLeft, inorder, inLeft, index - 1);
+		root.right = buildTree(preorder, index - inLeft + preLeft + 1,
+			preRight, inorder, index + 1, inRight);
+		return root;
+	}
 }
