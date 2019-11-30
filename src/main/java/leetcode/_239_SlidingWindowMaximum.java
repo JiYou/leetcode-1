@@ -15,7 +15,7 @@ public class _239_SlidingWindowMaximum {
 				deque.poll();
 			while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i])
 				deque.removeLast();
-			deque.offerLast(nums[i]);
+			deque.offerLast(i);
 
 			if (i + 1  >= k)
 				res[i + 1 - k] = nums[deque.peek()];

@@ -23,9 +23,9 @@ public class _545_BoundaryOfBinaryTree {
 			return;
 		res.add(root.value);
 		if (root.left == null)
-			leftBoundary(root.left);
-		else
 			leftBoundary(root.right);
+		else
+			leftBoundary(root.left);
 	}
 
 	public void rightBoundary(TreeNode root) {

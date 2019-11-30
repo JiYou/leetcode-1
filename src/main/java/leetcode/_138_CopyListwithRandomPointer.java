@@ -37,7 +37,7 @@ public class _138_CopyListwithRandomPointer {
 			RandomListNode2 copy = new RandomListNode2(cur.label);
 			cur.next = copy;
 			copy.next = next;
-			cur = cur.next;
+			cur = next;
 		}
 		cur = head;
 		//copy random
