@@ -25,4 +25,19 @@ public class _494_TargetSum {
 		}
 		return dp[sum + s];
 	}
+
+	int count = 0;
+	public int findTargetSum2(int[] nums, int s) {
+		calculate(nums, 0, 0, s);
+		return count;
+	}
+
+	private void calculate(int[] nums, int i, int sum, int s) {
+		if (i == nums.length && sum == s)
+			count++;
+		else {
+			calculate(nums, i + 1, sum + nums[i], s);
+			calculate(nums, i + 1, sum - nums[i], s);
+		}
+	}
 }
