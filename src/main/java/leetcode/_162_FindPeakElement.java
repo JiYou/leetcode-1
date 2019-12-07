@@ -12,4 +12,11 @@ public class _162_FindPeakElement {
 		}
 		return start;
 	}
+
+	public int findPeakElement2(int[] nums) {
+		for (int i = 0; i < nums.length; i++)
+			if (nums[i] > nums[i + 1])
+				return i;
+		return nums.length - 1;
+	}
 }

@@ -46,11 +46,11 @@ public class _378_KthSmallestElementInASortedMatrix {
 		int i = matrix.length - 1, j = 0;
 		int res = 0;
 		while (i >= 0 && j < matrix.length) {
-			if (matrix[i][j] > num) {
-				i--;
-			} else {
+			if (matrix[i][j] < num) {
 				res += i + 1;
 				j++;
+			} else {
+				i--;
 			}
 		}
 		return res;

@@ -44,7 +44,7 @@ public class _438_FindAllAnagramsInAString {
 			if (hash[sArr[r] - 'a'] >= 0)
 				count++;
 
-			if (r > pLength) {
+			if (r > pLength - 1) {
 				hash[sArr[l] - 'a']++;
 				if (hash[sArr[l] - 'a'] > 0)
 					count--;

@@ -18,5 +18,4 @@ public class _98_ValidateBinarySearchTree {
 		return helper(root.left, min, root.value) && helper(root.right, root.value, max);
 	}
 
-
 }
