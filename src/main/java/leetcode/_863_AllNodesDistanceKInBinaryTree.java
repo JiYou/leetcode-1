@@ -22,7 +22,7 @@ public class _863_AllNodesDistanceKInBinaryTree {
 				TreeNode node = queue.poll();
 				if (k == K) {
 					res.add(node.value);
-					break;
+				//	break;
 				}
 				for (TreeNode child : map.get(node)) {
 					if (set.contains(child))
@@ -31,6 +31,7 @@ public class _863_AllNodesDistanceKInBinaryTree {
 					queue.offer(child);
 				}
 			}
+			k++;
 		}
 		return res;
 	}
