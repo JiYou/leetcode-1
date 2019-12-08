@@ -1,6 +1,8 @@
 package leetcode;
 
 
+import com.leetcode.list.RandomListNode;
+
 import java.util.HashMap;
 
 class RandomListNode2 {
@@ -60,6 +62,49 @@ public class _138_CopyListwithRandomPointer {
 			copy.next = cur.next;
 		}
 
+		return dummy.next;
+	}
+
+	/**
+
+	 1->1'->2->2'->3->3'->4->4'
+
+	 1'->2'->3'->4'
+	 * @param head
+	 * @return
+	 */
+	public RandomListNode2 copyRandomList3(RandomListNode2 head) {
+		RandomListNode2 cur = head;
+		RandomListNode2 next;
+		//next copy
+		while (cur != null) {
+			next = cur.next;
+			RandomListNode2 copy = new RandomListNode2(cur.label);
+			cur.next = copy;
+			copy.next = next;
+			cur = next;
+		}
+		cur = head;
+		//random copy
+		while (cur != null) {
+			if (cur.random != null) {
+				cur.next.random = cur.random.next;
+			}
+			cur = cur.next.next;
+		}
+		cur = head;
+		RandomListNode2 dummy = new RandomListNode2(0);
+		RandomListNode2 copy;
+		RandomListNode2 copycur = dummy;
+
+		while (cur != null) {
+			next = cur.next.next;
+			copy = cur.next;
+			copycur.next = copy;
+			copycur = copy;
+			cur.next = next;
+			cur = next;
+		}
 		return dummy.next;
 	}
 

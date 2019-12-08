@@ -5,6 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 
 public class _49_GroupAnagrams {
+	/**
+	 *
+	 For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+	 Return:
+	 [
+	 ["ate", "eat","tea"],
+	 ["nat","tan"],
+	 ["bat"]
+	 ]
+
+	 time : O(m * n)   m : strs 长度   n : strs中最大String的长度
+	 space : O(n) 或者 O(n^2) 结果不同
+
+	 */
 	public List<List<String>> groupAnagrams(String[] strs) {
 		HashMap<String, List<String>> map = new HashMap<>();
 

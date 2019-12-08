@@ -7,18 +7,18 @@ import java.util.HashMap;
  */
 
 
-class RandomListNode {
+class RandomListNode2 {
 	int label;
-	RandomListNode next, random;
-	RandomListNode(int label) {this.label = label;}
+	RandomListNode2 next, random;
+	RandomListNode2(int label) {this.label = label;}
 }
 
 public class CopyListwithRandomPointer_Leetcode138 {
-	public RandomListNode copyRandomList(RandomListNode head) {
-		HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
-		RandomListNode cur = head;
+	public RandomListNode2 copyRandomList(RandomListNode2 head) {
+		HashMap<RandomListNode2, RandomListNode2> map = new HashMap<>();
+		RandomListNode2 cur = head;
 		while (cur != null) {
-			map.put(cur, new RandomListNode(cur.label));
+			map.put(cur, new RandomListNode2(cur.label));
 			cur = cur.next;
 		}
 

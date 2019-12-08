@@ -6,7 +6,23 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Meetingroom_253 {
-	public int minMeetingRooms(Interval[] intervals) {
+/**
+ * 253. Meeting Rooms II
+
+
+ |___| |____|
+   |_____| |___|
+
+ start:
+ | |   |   |
+ i
+ end :
+     |   |  |  |
+ end
+
+ time : O(nlogn) space : O(n)*/
+
+ public int minMeetingRooms(Interval[] intervals) {
 		if (intervals == null || intervals.length == 0)
 			return 0;
 		int[] starts = new int[intervals.length];
