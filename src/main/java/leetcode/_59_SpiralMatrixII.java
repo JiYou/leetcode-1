@@ -18,7 +18,7 @@ public class _59_SpiralMatrixII {
 			for (int i = colEnd; i >= colBegin; i--)
 				matrix[rowEnd][i] = num++;
 			rowEnd--;
-			for (int i = rowEnd; i >= rowBegin; i++)
+			for (int i = rowEnd; i >= rowBegin; i--)
 				matrix[i][colBegin] = num++;
 			colBegin++;
 		}

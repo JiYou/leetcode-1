@@ -11,9 +11,13 @@ public class _151_ReverseWordsinaString {
 	}
 
 	private void reverse(char[] ch, int i, int j) {
-		char tmp = ch[i];
-		ch[i] = ch[j];
-		ch[j] = tmp;
+		while(i < j) {
+			char tmp = ch[i];
+			ch[i] = ch[j];
+			ch[j] = tmp;
+			i++;
+			i--;
+		}
 	}
 
 	private void reverseWord(char[] ch, int len) {
