@@ -30,8 +30,8 @@ public class _145_BinaryTreePostorderTraversal {
 		while (!stack.isEmpty()) {
 			TreeNode cur = stack.pop();
 			res.addFirst(cur.value);
-			if (cur.left != null) stack.push(cur.left);
 			if (cur.right != null) stack.push(cur.right);
+			if (cur.left != null) stack.push(cur.left);
 		}
 		return res;
 	}
@@ -54,7 +54,7 @@ public class _145_BinaryTreePostorderTraversal {
 				stack.push(cur);
 				cur = cur.right;
 				while (cur != null) {
-					stack.push(cur.left);
+					stack.push(cur);
 					cur = cur.left;
 				}
 			} else {

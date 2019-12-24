@@ -17,6 +17,7 @@ public class _146_LRUCache {
 
 	 Example:
 
+
 	 _146_LRUCache cache = new _146_LRUCache( 2  capacity  );
 
 	 cache.put(1, 1);

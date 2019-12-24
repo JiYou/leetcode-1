@@ -30,7 +30,7 @@ public class _94_BinaryTreeInorderTraversal {
 		TreeNode cur = root;
 		while (cur != null || !stack.isEmpty()) {
 			while (cur != null) {
-				stack.push(cur.left);
+				stack.push(cur);
 				cur = cur.left;
 			}
 

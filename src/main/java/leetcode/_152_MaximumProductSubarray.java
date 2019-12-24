@@ -10,7 +10,7 @@ public class _152_MaximumProductSubarray {
 			int tmp = max;
 			max = Math.max(Math.max(max * nums[i], min * nums[i]), nums[i]);
 			min = Math.min(Math.min(tmp * nums[i], min * nums[i]), nums[i]);
-			res = Math.max(max, min);
+			res = Math.max(max, res);
 		}
 		return res;
 	}

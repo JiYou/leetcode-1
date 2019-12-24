@@ -16,9 +16,9 @@ public class _90_SubsetsII {
 		res.add(new ArrayList<>(list));
 
 		for (int i = index; i < nums.length; i++) {
-			if (i > 0 && nums[i] == nums[i - 1]) continue;
+			if (i != index && nums[i] == nums[i - 1]) continue;
 			list.add(nums[i]);
-			helper(res, list, nums, index + 1);
+			helper(res, list, nums, i + 1);
 			list.remove(list.size() - 1);
 		}
 	}

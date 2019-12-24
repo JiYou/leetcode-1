@@ -6,7 +6,7 @@ public class _153_FindMinimuminRotatedSortedArray {
 			return -1;
 		int l = 0, r = nums.length - 1;
 
-		while (l <= r) {
+		while (l < r) {
 			int mid = (r - l) / 2 + l;
 			if (nums[mid] < nums[r])
 				r = mid;

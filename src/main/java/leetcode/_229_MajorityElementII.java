@@ -35,8 +35,9 @@ public class _229_MajorityElementII {
 				count2++;
 		if (count1 > nums.length / 3)
 			res.add(number1);
-		if (count2 > nums.length / 3)
+		if (count2 > nums.length / 3 && number2 != number1)
 			res.add(number2);
+
 		return res;
 	}
 }
