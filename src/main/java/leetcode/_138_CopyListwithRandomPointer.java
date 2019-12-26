@@ -1,8 +1,6 @@
 package leetcode;
 
 
-import com.leetcode.list.RandomListNode;
-
 import java.util.HashMap;
 
 class RandomListNode2 {

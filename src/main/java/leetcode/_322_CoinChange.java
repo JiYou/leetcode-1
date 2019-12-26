@@ -8,7 +8,7 @@ public class _322_CoinChange {
 		for (int i = 1; i <= amount; i++) {
 			dp[i] = Integer.MAX_VALUE;
 			for (int j = 0; j < coins.length; j++) {
-				if (i >= coins[j] && coins[i - coins[j]] != Integer.MAX_VALUE)
+				if (i >= coins[j])
 					dp[i] = Math.min(dp[i - coins[j]] + 1, dp[i]);
 			}
 		}

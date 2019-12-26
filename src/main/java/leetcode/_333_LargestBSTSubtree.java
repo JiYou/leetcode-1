@@ -63,6 +63,4 @@ public class _333_LargestBSTSubtree {
 		boolean right = isBST(root.right);
 		return left && right;
 	}
-
-
 }
