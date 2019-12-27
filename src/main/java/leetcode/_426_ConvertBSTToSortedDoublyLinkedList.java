@@ -37,5 +37,35 @@ public class _426_ConvertBSTToSortedDoublyLinkedList {
 		pre = node;
 		helper(node.right);
 	}
+
+
+	private Node first = null;
+	private Node last = null;
+
+	public Node BSTToDoublyList2(Node node) {
+		if(node == null)
+			return node;
+		helper2(node);
+		last.right = first;
+		first.left = last;
+		return first;
+	}
+
+	private void helper2(Node node) {
+		if (node == null)
+			return;
+
+		helper2(node.left);
+
+		if (last != null) {
+			last.right = node;
+			node.left = last;
+		} else
+			first = node;
+		last = node;
+
+		helper2(node.right);
+	}
+
 }
 
