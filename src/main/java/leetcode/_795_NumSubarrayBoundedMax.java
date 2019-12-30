@@ -15,6 +15,18 @@ public class _795_NumSubarrayBoundedMax {
 		return res;
 	}
 
-
+	private int count2(int[] A, int bound) {
+		int res = 0;
+		for(int i = 0, j = 0; i < bound; ) {
+			if (A[i] < bound) {
+				i++;
+				res += i - j;
+ 			} else {
+				i++;
+				j = i;
+			}
+		}
+		return res;
+	}
 
 }

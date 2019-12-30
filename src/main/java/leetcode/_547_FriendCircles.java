@@ -27,7 +27,7 @@ public class _547_FriendCircles {
 		int res = nums.length;
 		int[] roots = new int[nums.length];
 		for (int i = 0; i < nums.length; i++)
-			roots[i] = -1;
+			roots[i] = i;
 
 		for (int i = 0; i < nums.length; i++)
 			for (int j = 0; j < nums[0].length; j++) {
@@ -44,9 +44,7 @@ public class _547_FriendCircles {
 	}
 
 	private int find(int[] roots, int i) {
-		while (roots[i] != -1)
-			i = roots[i];
-		return i;
+		return i == roots[i] ? i : find(roots, roots[i]);
 	}
 
 }

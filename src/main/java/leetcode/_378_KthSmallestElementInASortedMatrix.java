@@ -29,16 +29,14 @@ public class _378_KthSmallestElementInASortedMatrix {
 		int n = matrix.length;
 		int left = matrix[0][0];
 		int right = matrix[n - 1][n - 1];
-		while (left + 1 < right) {
+		while (left < right) {
 			int mid = (right - left) / 2 + left;
 			int num = count(matrix, mid);
-			if(num >= k)
-				right = mid;
+			if(num < k)
+				left = mid + 1;
 			else
-				left = mid;
+				right = mid;
 		}
-		if(count(matrix, right) <= k - 1)
-			return right;
 		return left;
 	}
 
@@ -46,7 +44,7 @@ public class _378_KthSmallestElementInASortedMatrix {
 		int i = matrix.length - 1, j = 0;
 		int res = 0;
 		while (i >= 0 && j < matrix.length) {
-			if (matrix[i][j] < num) {
+			if (matrix[i][j] <= num) {
 				res += i + 1;
 				j++;
 			} else {

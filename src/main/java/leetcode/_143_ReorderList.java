@@ -32,12 +32,10 @@ public class _143_ReorderList {
 	}
 
 	private void merge(ListNode l1, ListNode l2) {
-		while (l1 != l2) {
+		while (l1.next != null && l2 != null) {
 			ListNode n1 = l1.next;
 			ListNode n2 = l2.next;
 			l1.next = l2;
-			if (n1 == null)
-				break;
 			l2.next = n1;
 			l1 = n1;
 			l2 = n2;

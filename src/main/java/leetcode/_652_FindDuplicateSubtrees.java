@@ -19,7 +19,7 @@ public class _652_FindDuplicateSubtrees {
 	private String helper(TreeNode node, List<TreeNode> res, Map<String,Integer> map) {
 		if (node == null)
 			return "#";
-		String serial = helper(node.left, res, map) + "," + helper(node.right, res, map) + node.value;
+		String serial = helper(node.left, res, map) + "," + helper(node.right, res, map) + "," + node.value;
 
 		if (map.getOrDefault(serial, 0) == 1){
 			res.add(node);
