@@ -6,8 +6,9 @@ public class _424_LongestRepeatingCharacterReplacement {
 		int start = 0, max = 0, res = 0;
 
 		for (int r = 0; r < s.length(); r++){
-			max = Math.max(max, ++count[s.charAt(r) - 'A']);
-			if (r - start + 1 - max > k) {
+			count[s.charAt(r) - 'A']++;
+			max = Math.max(max, count[s.charAt(r) - 'A']);
+			while (r - start + 1 - max > k) {
 				count[s.charAt(start) - 'A']--;
 				start++;
 			}
