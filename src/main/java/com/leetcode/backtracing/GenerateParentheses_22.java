@@ -23,6 +23,4 @@ public class GenerateParentheses_22 {
 		if (right > 0)
 			helper(res, s + ")", left, right - 1);
 	}
-
-
 }

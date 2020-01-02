@@ -95,6 +95,16 @@ public class _138_CopyListwithRandomPointer {
 		RandomListNode2 copy;
 		RandomListNode2 copycur = dummy;
 
+	/*	RandomListNode2 old_head = head, new_head = head.next;
+		dummy.next = head;
+
+		while (old_head != null) {
+			old_head.next = old_head.next.next;
+			new_head.next = new_head.next != null ? new_head.next.next : null;
+			old_head = old_head.next;
+			new_head = new_head.next;
+		}*/
+
 		while (cur != null) {
 			next = cur.next.next;
 			copy = cur.next;
@@ -107,3 +117,5 @@ public class _138_CopyListwithRandomPointer {
 	}
 
 }
+
+
