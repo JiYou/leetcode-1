@@ -11,12 +11,14 @@ public class OddEvenLinkedList_Leetcode328 {
 			return null;
 		ListNode odd = head;
 		ListNode even = head.next;
+		ListNode evenHead = head.next;
 		while (even != null && even.next != null) {
 			odd.next = odd.next.next;
 			even.next = even.next.next;
 			odd = odd.next;
 			even = even.next;
 		}
+		odd.next = evenHead;
 		return head;
 	}
 }

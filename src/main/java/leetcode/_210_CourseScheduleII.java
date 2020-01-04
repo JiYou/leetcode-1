@@ -31,6 +31,6 @@ public class _210_CourseScheduleII {
 				}
 			}
 		}
-		return res;
+		return (k == numCourses) ? res : new int[0];
 	}
 }

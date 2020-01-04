@@ -33,10 +33,10 @@ public class _49_GroupAnagrams {
 			}
 			if (map.containsKey(s)) {
 				List<String> list = map.get(s);
-				list.add(s);
+				list.add(str);
 			} else {
 				List<String> list = new ArrayList<>();
-				list.add(s);
+				list.add(str);
 				map.put(s, list);
 			}
 		}

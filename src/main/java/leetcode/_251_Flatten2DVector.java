@@ -1,32 +1,37 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class _251_Flatten2DVector {
 
-	int indexList, indexElement;
-	List<List<Integer>> list;
+	Queue<Integer> queue;
 
-	public _251_Flatten2DVector(List<List<Integer>> vec2d) {
-		indexElement = 0;
-		 indexList = 0;
-		 list = vec2d;
+	public _251_Flatten2DVector(int[][] v) {
+		queue = new LinkedList<>();
+		init(v);
 	}
 
-	public Integer next() {
-		return list.get(indexList).get(indexElement);
+	public int next() {
+		if(hasNext())
+			return queue.poll();
+		return -1;
 	}
 
 	public boolean hasNext() {
-		while (indexList < list.size()) {
-			if (indexElement < list.get(indexList).size()) {
-				return true;
-			} else {
-				indexElement = 0;
-				indexList++;
-			}
+		if(queue.isEmpty())
+			return false;
+		return true;
+	}
+
+	private void init(int[][] v) {
+		if(v == null || v.length == 0)
+			return;
+		for(int[] a: v) {
+			for (int i : a)
+				queue.offer(i);
 		}
-		return false;
 	}
 }
