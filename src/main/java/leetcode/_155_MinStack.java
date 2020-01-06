@@ -37,7 +37,10 @@ public class _155_MinStack {
 
 	public void push2(int x) {
 		s1.push(x);
-		if (minStack.isEmpty() || minStack.peek() < x)
+		if (!minStack.isEmpty()) {
+			if (minStack.peek() >= x)
+				minStack.push(x);
+		} else
 			minStack.push(x);
 	}
 

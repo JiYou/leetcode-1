@@ -19,7 +19,7 @@ public class _117_PopulatingNextRightPointersinEachNodeII {
 						pre.next = cur.right;
 					else
 						head = cur.right;
-					cur = cur.right;
+					pre = cur.right;
 				}
 				cur = cur.next;
 			}

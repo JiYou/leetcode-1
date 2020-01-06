@@ -24,7 +24,7 @@ public class _148_SortList {
 	private ListNode merge(ListNode a, ListNode b) {
 		ListNode dummy = new ListNode(0);
 		ListNode cur = dummy;
-		while (a != null || b != null) {
+		while (a != null && b != null) {
 			if (a.val < b.val) {
 				cur.next = a;
 				a = a.next;

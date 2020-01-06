@@ -17,8 +17,8 @@ public class _254_FactorCombinations {
 		}
 
 		for (int i = start; i <= n; i++) {
-			if (n % start == 0) {
-				list.add(start);
+			if (n % i == 0) {
+				list.add(i);
 				helper(res, list, n / i, i);
 				list.remove(list.size() - 1);
 			}
