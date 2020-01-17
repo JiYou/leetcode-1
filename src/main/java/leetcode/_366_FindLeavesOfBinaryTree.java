@@ -1,4 +1,4 @@
-package com.leetcode;
+package leetcode;
 
 import com.leetcode.common.TreeNode;
 
@@ -18,7 +18,7 @@ public class _366_FindLeavesOfBinaryTree {
 		int left = helper(res, root.left);
 		int right = helper(res, root.right);
 		int level = Math.max(left, right) + 1;
-		if (res.size() == left)
+		if (res.size() == level)
 			res.add(new ArrayList<>());
 		res.get(level).add(root.value);
 		root.left = null;

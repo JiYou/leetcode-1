@@ -13,7 +13,9 @@ public class _35_SearchInsertPosition {
 
 		while (left < right) {
 			int mid = (right - left) / 2 + left;
-			if (nums[mid] < target)
+			if (nums[mid] == target)
+				return mid;
+			else if (nums[mid] < target)
 				left = mid + 1;
 			else
 				right = mid;

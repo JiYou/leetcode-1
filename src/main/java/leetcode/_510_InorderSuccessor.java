@@ -35,10 +35,10 @@ public class _510_InorderSuccessor {
 	public TreeNode inorderSuccessor3(TreeNode x) {
 		if (x.right != null)
 			return findMin(x.right);
-		int cur = x.value;
-		while (x != null && x.value <= cur)
+
+		while (x.parent != null && x == x.parent.right)
 			x = x.parent;
-		return x;
+		return x.parent;
 	}
 
 	private TreeNode findMin(TreeNode node) {

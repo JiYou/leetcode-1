@@ -8,7 +8,7 @@ public class _81_SearchinRotatedSortedArrayII {
 			int mid = (end - start) / 2 + start;
 			if (nums[mid] == target)
 				return true;
-			if (nums[mid] == nums[start] && nums[mid] == nums[end]) {
+			if (nums[mid] == nums[start] && nums[mid] == nums[end]) { // 1 0 1 1   1 1 1 0 1
 				start++;
 				end--;
 			} else if (nums[mid] >= nums[start]) {

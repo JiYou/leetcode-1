@@ -16,7 +16,7 @@ public class _143_ReorderList {
 		}
 
 		tmp.next = null;
-		ListNode l1 = reverse(tmp);
+		ListNode l1 = reverse(slow);
 		merge(l1, head);
 	}
 
