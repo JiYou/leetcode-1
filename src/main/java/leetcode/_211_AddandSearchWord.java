@@ -40,8 +40,8 @@ public class _211_AddandSearchWord {
 	}
 
 	public boolean find(String word, TrieNode node, int index) {
-		if (index == word.length())
-			return node.isWord;
+			if (index == word.length())
+				return node.isWord;
 			if (word.charAt(index) == '.') {
 				for(TrieNode tmp : node.children) {
 					if (tmp != null && find(word, tmp, index + 1))

@@ -53,6 +53,7 @@ public class _333_LargestBSTSubtree {
 		return getCount(root.left) + getCount(root.right) + 1;
 	}
 
+	//判断当前树是否是BST，因为BST中序遍历为升序，所以如果当前元素小于等于上一个元素，则返回false
 	private boolean isBST(TreeNode root) {
 		if (root == null)
 			return true;
