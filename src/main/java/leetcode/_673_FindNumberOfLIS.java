@@ -11,6 +11,7 @@ public class _673_FindNumberOfLIS {
 		int[] lengths = new int[n];
 		int[] counts = new int[n];
 		Arrays.fill(counts, 1);
+		Arrays.fill(lengths, 1);
 
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < i; j++)

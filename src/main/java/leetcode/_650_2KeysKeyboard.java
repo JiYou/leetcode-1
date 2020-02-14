@@ -13,4 +13,15 @@ public class _650_2KeysKeyboard {
 		}
 		return dp[n];
 	}
+
+	public int minSteps2(int n) {
+		int res = 0;
+		for (int i = 2; i <= n; i++) {
+			while (n % i == 0) {
+				res += i;
+				n /= i;
+			}
+		}
+		return res;
+	}
 }
