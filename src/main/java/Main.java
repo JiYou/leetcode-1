@@ -1,33 +1,34 @@
-import com.leetcode.arrays.RemoveDuplicatesFromSortedArray;
-import com.leetcode.backtracing.LeetcodeBackTracing;
-import com.leetcode.sort.HeapSort;
-import com.leetcode.sort.MergeSort;
-import com.leetcode.sort.QuickSort;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
+import java.util.PriorityQueue;
 
 public class Main {
 	public static void main(String[] agrs) {
-		Vector<Integer> test = new Vector<>();
-		test.add(2);
-		test.add(7);
-		test.add(11);
-		test.add(15);
-		test.add(29);
-	//	int a[] = TwoSum.twoSumWithHashMap(test, 22);
-		int b[] = {3, 4, 1, 10, 8, 1, 15, 1, 12};
-		int c[] = {3, 4, 1, 10, 8, 2, 15, 9, 12};
-		/*QuickSort.sort(b);
-		RemoveDuplicatesFromSortedArray.removeDuplicates(b);
-		for (int i = 0; i < b.length; i++)
-			System.out.println(b[i]);*/
 
-		int a[] = {1,2,3};
-		List<List<Integer>> res = new ArrayList<>();
-		res = LeetcodeBackTracing.subsets(a);
-		for (int i = 0; i < res.size(); i++)
-			System.out.println(res.get(i));
+		PriorityQueue<Integer> queue = new PriorityQueue<>();
+		queue.offer(10);
+		queue.offer(15);
+		queue.offer(30);
+		queue.offer(20);
+		queue.offer(5);
+	/*	System.out.println("Initial PriorityQueue: " + queue);
+		System.out.println("The element at the head of the"
+			+ " queue is: " + queue.poll());
+		System.out.println("Final PriorityQueue: " + queue);*/
+
+
+		int[] a = new int[] {5, 10, 20, 1, 15, 28};
+		System.out.println("Test: " + find(a, 2));
+	}
+
+	public static int find(int[] nums, int k) {
+		if (nums == null || nums.length == 0)
+			return 0;
+		PriorityQueue<Integer> queue = new PriorityQueue<>();
+		for (int num : nums) {
+			queue.offer(num);
+			if (queue.size() > k) {
+				queue.poll();
+			}
+		}
+		return queue.poll();
 	}
 }

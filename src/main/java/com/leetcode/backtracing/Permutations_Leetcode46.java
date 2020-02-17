@@ -15,7 +15,7 @@ public class Permutations_Leetcode46 {
 
 	private void helper(List<List<Integer>>res, List<Integer> list, int[] nums) {
 		if (list.size() == nums.length) {
-			list.add(new ArrayList<>(list));
+			//list.add(new ArrayList<>(list));
 			return;
 		}
 

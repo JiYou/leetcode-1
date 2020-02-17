@@ -7,7 +7,7 @@ import com.leetcode.common.TreeNode;
  */
 public class SumRoottoLeafNumbers_Leetcode129 {
 	public int sumNumbers(TreeNode root) {
-		helper(root, 0);
+		return helper(root, 0);
 	}
 
 	private int helper(TreeNode node, int num) {

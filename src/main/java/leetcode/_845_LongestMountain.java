@@ -16,6 +16,7 @@ public class _845_LongestMountain {
 					res = Math.max(res, end - begin + 1);
 				}
 			}
+			begin = Math.max(end, end - begin + 1);
 		}
 		return res;
 	}
