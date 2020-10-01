@@ -23,6 +23,4 @@ public class _46_Permutations {
 			list.remove(list.size() - 1);
 		}
 	}
-
-
 }

@@ -2,6 +2,8 @@ package leetcode;
 
 public class _81_SearchinRotatedSortedArrayII {
 	public boolean search(int[] nums, int target) {
+		if (nums == null || nums.length == 0)
+			return false;
 		int start = 0;
 		int end = nums.length - 1;
 		while (start < end) {

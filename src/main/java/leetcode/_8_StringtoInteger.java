@@ -26,4 +26,25 @@ public class _8_StringtoInteger {
 		}
 		return (int) sign * res;
 	}
+
+	public String itoa(int num, int base) {
+		if (num == 0)
+			return "0";
+		String ret = "";
+		int flag = 0;
+		int reminder = 0;
+
+		if (num < 0) {
+			flag = -1;
+			num *= -1;
+		}
+
+		while (num > 0) {
+			reminder = num % base;
+			num /= base;
+			ret = (char)(reminder + '0') + ret;
+		}
+
+		return flag == 0 ? ret : ( '-' + ret);
+	}
 }
