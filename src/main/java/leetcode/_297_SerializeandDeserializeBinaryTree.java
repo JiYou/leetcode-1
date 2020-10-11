@@ -14,7 +14,7 @@ public class _297_SerializeandDeserializeBinaryTree {
 		StringBuffer sb = new StringBuffer();
 		while (!queue.isEmpty()) {
 			TreeNode cur = queue.poll();
-			if (queue == null) {
+			if (cur == null) {
 				sb.append("null ");
 				continue;
 			}

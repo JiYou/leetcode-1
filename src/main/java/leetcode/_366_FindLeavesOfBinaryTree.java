@@ -25,4 +25,30 @@ public class _366_FindLeavesOfBinaryTree {
 		root.right = null;
 		return level;
 	}
+
+	public List<List<Integer>> findLeaves2(TreeNode root) {
+		List<List<Integer>> res = new ArrayList<>();
+		while (root != null) {
+			List list = new ArrayList();
+			helper(root, list);
+			res.add(list);
+		}
+		return res;
+	}
+
+
+	private TreeNode helper(TreeNode root, List<Integer> list) {
+		if (root == null)
+			return null;
+		if (root.left == null && root.right == null) {
+			list.add(root.value);
+			return null;
+		}
+
+		root.left = helper(root.left, list);
+		root.right = helper(root.right, list);
+		return root;
+	}
+
+
 }

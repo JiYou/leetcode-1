@@ -15,7 +15,7 @@ public class RangeSumQueryMutable_Leetcode307 {
 		this.nums = nums;
 		sums = new int[nums.length];
 		sums[0] = 0;
-		for (int i = 0; i < nums.length; i++) {
+		for (int i = 0; i < nums.length - 1; i++) {
 			sums[i + 1] = sums[i] + nums[i];
 		}
 		log = new HashMap<>();

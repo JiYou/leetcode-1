@@ -32,10 +32,13 @@ public class _151_ReverseWordsinaString {
 	private String cleanSpaces(char[] ch, int len) {
 		int i = 0;
 		int j = 0;
-		while (j < len && ch[j] == ' ') j++;
-		while (j < len && ch[j] != ' ') ch[i++] = ch[j++];
-		while (j < len && ch[j] == ' ') j++;
-		if (j < len) ch[i++] = ' ';
+		while (j < len) {
+			while (j < len && ch[j] == ' ') j++;
+			while (j < len && ch[j] != ' ') ch[i++] = ch[j++];
+			while (j < len && ch[j] == ' ') j++;
+			if (j < len) ch[i++] = ' ';
+		}
+
 		return ch.toString().substring(0, i);
 	}
 

@@ -8,19 +8,34 @@ public class _450_DeleteNodeInABST {
 			return null;
 		}
 		if (root.value > key)
-			return deleteNode(root.left, key);
+			root.left = deleteNode(root.left, key);
 		else if (root.value < key)
-			return deleteNode(root.right, key);
+			root.right = deleteNode(root.right, key);
 		else {
-			if (root.left == null)
-				return root.right;
-			else if (root.right == null)
-				return root.left;
-			TreeNode min = findMin(root.right);
-			root.value = min.value;
-			root.right = deleteNode(root.right, min.value);
+			if (root.left == null && root.right == null)
+				root = null;
+			else if (root.right != null) {
+				root.value = successor(root.right);
+				root.right = deleteNode(root.right, root.value);
+			} else {
+				root.value = predecessor(root.left);
+				root.left = deleteNode(root.left, root.value);
+			}
 		}
 		return root;
+	}
+
+	private int successor(TreeNode root) {
+		//root = root.right;
+		while (root.left != null)
+			root = root.left;
+    return root.value;
+	}
+
+	public int predecessor(TreeNode root) {
+		while (root.right != null)
+			root = root.right;
+		return root.value;
 	}
 
 	private TreeNode findMin(TreeNode root) {

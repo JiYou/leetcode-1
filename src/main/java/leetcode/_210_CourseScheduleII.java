@@ -25,7 +25,7 @@ public class _210_CourseScheduleII {
 				if (pair[1] == cur) {
 					degress[pair[0]]--;
 					if (degress[pair[0]] == 0) {
-						queue.offer(degress[pair[0]]);
+						queue.offer(pair[0]);
 						res[k++] = pair[0];
 					}
 				}

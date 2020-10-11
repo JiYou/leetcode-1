@@ -10,7 +10,7 @@ public class _224_BasicCalculator {
 		for (int i = 0; i < s.length(); i++) {
 			if (Character.isDigit(s.charAt(i))) {
 				int num = s.charAt(i) - '0';
-				while (i + 1 < s.length() && Character.isDigit(i + 1)) {
+				while (i + 1 < s.length() && Character.isDigit(s.charAt(i + 1))) {
 					num = num * 10 + s.charAt(i + 1) - '0';
 					i++;
 				}

@@ -16,7 +16,8 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 		while (!queue.isEmpty()) {
 			levels.add(new ArrayList<>());
-			for (int i = 0; i < queue.size(); i++) {
+			int count = queue.size();
+			for (int i = 0; i < count; i++) {
 				TreeNode cur = queue.poll();
 				levels.get(level).add(cur.value);
 				if (cur.left != null)

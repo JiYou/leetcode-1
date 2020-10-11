@@ -2,24 +2,34 @@ package leetcode;
 
 import com.leetcode.utils.Interval;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class _253_MeetingRoomsII {
 	public int minMeetingRooms(Interval[] intervals) {
 		if(intervals == null || intervals.length == 0)
 			return 0;
-		Arrays.sort(intervals, (a, b) -> (a.start - b.start));
 
-		int res = 1, end = intervals[0].end;
+		int[] starts = new int[intervals.length];
+		int[] ends = new int[intervals.length];
 
-		for (int i = 1; i < intervals.length; i++) {
-			if (intervals[i].start > end)
-				end = intervals[i].end;
-			else
+		for (int i = 0; i < intervals.length; i++) {
+			starts[i] = intervals[i].start;
+			ends[i] = intervals[i].end;
+		}
+
+		Arrays.sort(starts);
+		Arrays.sort(ends);
+
+		int res = 0, end = 0;
+
+		for (int i = 0; i < intervals.length; i++) {
+			if (starts[i] < ends[end])
 				res++;
+			else
+				end++;
 		}
 		return res;
 	}
-
 
 }

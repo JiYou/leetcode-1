@@ -26,12 +26,12 @@ public class _380_InsertDeleteGetRandom {
 	public boolean remove(int val) {
 		if (!map.containsKey(val))
 			return false;
-		int index = map.remove(val);
-		int last = list.remove(list.size() - 1);
-		if (index != list.size()) {
-			map.put(last, index);
-			list.set(index, last);
-		}
+		int last = list.get(list.size() - 1);
+		int idx = map.get(val);
+		list.set(idx, last);
+		map.put(last, idx);
+		list.remove(list.size() - 1);
+		map.remove(val);
 		return true;
 	}
 

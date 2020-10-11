@@ -3,6 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Stack;
 
 public class _261_GraphValidTree {
 	public boolean validTree(int n, int[][] edges) {
@@ -56,7 +57,67 @@ public class _261_GraphValidTree {
 		return i;
 	}
 
+	int connect = 0;
+
+	public boolean validTree3(int n, int[][] edges) {
+		if (edges == null || edges.length != n -1)
+			return false;
+		List<List<Integer>> graph = new ArrayList<List<Integer>>();
+		for (int i = 0; i < n; i++)
+			graph.add(new ArrayList<Integer>());
+
+		for (int[] edge : edges) {
+			graph.get(edge[0]).add(edge[1]);
+			graph.get(edge[1]).add(edge[0]);
+		}
+
+		boolean[] visited = new boolean[n];
+		valid(graph, 0, visited);
+		return connect == n;
+	}
+
+	private void valid(List<List<Integer>> graph, int v, boolean[] visited) {
+		if (visited[v])
+			return;
+		connect++;
+		visited[v] = true;
+		for (int n : graph.get(v))
+			valid(graph, n, visited);
+	}
 
 
+	//DFS
 
+	public boolean validTree4(int n, int[][] edges) {
+		if (edges == null || edges.length != n -1)
+			return false;
+
+		int[][] graph = new int[n][n];
+		for (int[] edge : edges) {
+			graph[edge[0]][edge[1]] = 1;
+			graph[edge[1]][edge[0]] = 1;
+		}
+
+		Stack<Integer> stack = new Stack<Integer>();
+		stack.add(0);
+		boolean[] visited = new boolean[n];
+		while (!stack.isEmpty()) {
+			Integer cur = stack.pop();
+			visited[cur] = true;
+			for (int i = 0; i < n; i++) {
+				if (graph[cur][i] == 1) {
+					if (visited[i])
+						return false;
+					visited[i] = true;
+					graph[cur][i] = 0;
+					graph[i][cur] = 0;
+					stack.add(i);
+				}
+			}
+		}
+		for (int i = 0; i < n; i++)
+			if (!visited[i])
+				return false;
+		return true;
+	}
 }

@@ -25,5 +25,4 @@ public class _113_PathSumII {
 		helper(res, list, root.right, sum - root.value);
 		list.remove(list.size() - 1);
 	}
-
 }

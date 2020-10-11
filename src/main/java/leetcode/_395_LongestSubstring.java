@@ -27,3 +27,5 @@ public class _395_LongestSubstring {
 		return p2 - p1 + 1;
 	}
 }
+
+
