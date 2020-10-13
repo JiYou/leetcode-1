@@ -40,6 +40,4 @@ public class _554_LeastBricksWall {
 		}
 		return res;
 	}
-
-
 }

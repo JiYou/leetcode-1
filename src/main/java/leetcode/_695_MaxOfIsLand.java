@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class _695_MaxOfIsLand {
 	private int m;
 	private int n;
@@ -34,4 +37,43 @@ public class _695_MaxOfIsLand {
 	}
 
 
+	public int maxAreaOfIsland2(int[][] grid) {
+		int max = 0;
+		for (int i = 0; i < grid.length; i ++)
+			for (int j = 0; j < grid[0].length; j++)
+				if (grid[i][j] == 1)
+					max = Math.max(max, dfs(grid, i, j));
+		return max;
+	}
+
+	private int dfs(int[][] grid, int i, int j) {
+		if (i < 0 || i > grid.length || j < 0 || j > grid[0].length || grid[i][j] == 0)
+			return 0;
+		grid[i][j] = 0;
+		return 1 + dfs(grid, i + 1, j) + dfs(grid, i - 1, j) + dfs(grid, i, j + 1) + dfs(grid, i, j - 1);
+	}
+
+	private int bfs(int[][] grid, int i, int j) {
+		int m = grid.length, n = grid[0].length;
+		if (grid[i][j] == 0)
+			return 0;
+		grid[i][j] = 0;
+		Queue<int[]> queue = new LinkedList<int[]>();
+		queue.offer(new int[] {i, j});
+		int[][] dir = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+		int res = 1;
+		while (!queue.isEmpty()) {
+			int[] cur = queue.poll();
+			for (int[] d : dir) {
+				int x = cur[0] + d[0];
+				int y = cur[1] + d[1];
+				if(x < 0 || x > m || y < 0 || y > n || grid[x][y] == 0)
+					continue;
+				grid[x][y] = 0;
+				res++;
+				queue.offer(new int[] {x,y});
+			}
+		}
+		return res;
+	}
 }

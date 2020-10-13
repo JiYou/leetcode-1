@@ -7,7 +7,6 @@ public class _687_LongestUnivaluePath {
 	int res = 0;
 
 	public int longestUnivaluePath(TreeNode root) {
-		res = 0;
 		helper(root);
 		return res;
 	}
