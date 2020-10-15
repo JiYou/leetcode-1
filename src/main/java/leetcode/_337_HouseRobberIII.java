@@ -19,5 +19,4 @@ public class _337_HouseRobberIII {
 			Math.max(right[0], right[1]);
 		return new int[] {rob, no_rob};
 	}
-
 }

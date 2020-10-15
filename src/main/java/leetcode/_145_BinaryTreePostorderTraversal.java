@@ -30,8 +30,8 @@ public class _145_BinaryTreePostorderTraversal {
 		while (!stack.isEmpty()) {
 			TreeNode cur = stack.pop();
 			res.addFirst(cur.value);
-			if (cur.right != null) stack.push(cur.right);
 			if (cur.left != null) stack.push(cur.left);
+			if (cur.right != null) stack.push(cur.right);
 		}
 		return res;
 	}
